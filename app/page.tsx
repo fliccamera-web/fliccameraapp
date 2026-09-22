@@ -42,9 +42,9 @@ export default function Home() {
       <nav className="nav">
         <a href="#" className="logo">flic<span>®</span></a>
         <div className="navlinks">
-          <button className={`app-menu-trigger ${appMenuOpen ? "active" : ""}`} onClick={() => setAppMenuOpen(!appMenuOpen)}>Get the app <span>{appMenuOpen ? "⌃" : "⌄"}</span></button>
+          <button className={`app-menu-trigger ${appMenuOpen ? "active" : ""}`} aria-expanded={appMenuOpen} onClick={() => { setAppMenuOpen(!appMenuOpen); setUseCasesOpen(false); }}>Get the app <span>{appMenuOpen ? "⌃" : "⌄"}</span></button>
           <a href="#pricing">Pricing</a>
-          <button className={`use-cases-trigger ${useCasesOpen ? "active" : ""}`} onClick={() => setUseCasesOpen(!useCasesOpen)}>Use cases <span>⌃</span></button>
+          <button className={`use-cases-trigger ${useCasesOpen ? "active" : ""}`} aria-expanded={useCasesOpen} onClick={() => { setUseCasesOpen(!useCasesOpen); setAppMenuOpen(false); }}>Use cases <span>{useCasesOpen ? "⌃" : "⌄"}</span></button>
           <a href="#faq">Support</a>
         </div>
         <a className="nav-cta" href="#start">Create your event <Arrow /></a>

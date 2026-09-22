@@ -36,11 +36,11 @@ footer{background:#101010;color:#8a8a8a}
 .hero-copy,.section-head>p,.book-copy p,.center-head p,.step p,.feature-copy p,.feature-row p,.price-card p,.faq-item p{color:#b0b0b0}
 .trust span,.qr-card span,.film-count,.dots{color:#b0b0b0}
 .price-card li{color:#e8e8e8}
-.hero h1,.section h2,.feature-band h2,.reviews h2,.start h2,.hero h1 em,.section h2 em,.feature-band h2 em,.reviews h2 em,.start h2 em,.polaroid small,.scribble,.book-cover h3,.book-cover h3 em{font-family:'Playfair Display',serif}
+.hero h1,.section h2,.feature-band h2,.reviews h2,.start h2,.hero h1 em,.section h2 em,.feature-band h2 em,.reviews h2 em,.start h2 em,.polaroid small,.scribble,.book-cover h3,.book-cover h3 em{font-family:'Inter',sans-serif}
 body,.nav,.navlinks,.nav-cta,.button,.hero-copy,.step h3,.step p,.feature-copy p,.feature-row h3,.feature-row p,.book-copy p,.price-card p,.price-card li,.review p,.faq-item strong,.start p{font-family:'Inter',sans-serif}
 .eyebrow,.status,.qr-card strong,.qr-card span,.film-count,.book-small,.book-date,.book-meta,.ticket-title,.popular-tag,.review small,.feature-row>span{font-family:'JetBrains Mono',monospace}
-.hero h1,.section h2,.feature-band h2,.reviews h2,.start h2{letter-spacing:-.045em}
-.hero h1 em,.section h2 em,.feature-band h2 em,.reviews h2 em,.start h2 em{letter-spacing:-.055em}
+.hero h1,.section h2,.feature-band h2,.reviews h2,.start h2{font-weight:700;letter-spacing:-.07em}
+.hero h1 em,.section h2 em,.feature-band h2 em,.reviews h2 em,.start h2 em{font-weight:500;font-style:italic;letter-spacing:-.07em}
 .nav{height:72px;padding:0 4vw;gap:28px}.nav .logo{font-family:'Inter',sans-serif;font-size:28px;min-width:120px}.navlinks{flex:1;justify-content:center;gap:48px}.nav-cta{min-width:174px;justify-content:center;padding:12px 16px;font-size:12px}.nav-cta .arrow{font-size:16px}
 .app-menu-trigger{border:0;background:transparent;color:#e8e8e8;font:500 15px 'Inter',sans-serif;cursor:pointer;white-space:nowrap;text-decoration:underline;text-underline-offset:10px}.app-menu-trigger span{color:#b0b0b0;font-size:20px;margin-left:7px}.app-menu-trigger.active{color:#8a8a8a}.app-menu{position:absolute;top:68px;left:4vw;width:245px;background:#333;border:1px solid #666;border-radius:14px;box-shadow:0 18px 45px #0008;z-index:20;overflow:hidden}.app-menu a{display:block;padding:17px 20px;border-bottom:1px solid #666;color:#e8e8e8}.app-menu a:last-child{border-bottom:0}.app-menu strong,.app-menu span{display:block}.app-menu strong{font:600 14px 'Inter',sans-serif}.app-menu span{font:12px 'Inter',sans-serif;color:#b0b0b0;margin-top:4px}
 @media(max-width:800px){.nav{height:68px;padding:0 18px;gap:12px}.nav .logo{min-width:auto;font-size:26px}.nav-cta{min-width:0;padding:10px 12px;font-size:10px}.nav-cta .arrow{font-size:14px}}
