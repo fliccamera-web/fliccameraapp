@@ -21,10 +21,10 @@ body{background:var(--cream);color:#e8e8e8}
 .polaroid,.qr-card,.book-pages,.price-card,.review{background:#1c1c1c;color:#e8e8e8}
 .qr-card{box-shadow:5px 8px 0 #333}
 .scribble em,.book-cover h3 em{color:#b0b0b0}
-.feature-band,.reviews{background:#1c1c1c}
+.feature-band,.reviews{background:#1c1c1c;color:#e8e8e8}
 .button.cream{background:#e8e8e8;color:#101010}
 .feature-copy p,.feature-row p{color:#8a8a8a}
-.book-cover{background:#101010;box-shadow:15px 18px 0 #333}
+.book-cover{background:#101010;color:#e8e8e8;box-shadow:15px 18px 0 #333}
 .pricing{background:#1c1c1c}
 .price-card.popular{background:#333}
 .popular small,.popular p,.popular li{color:#b0b0b0}
@@ -35,3 +35,4 @@ footer{background:#101010;color:#8a8a8a}
 .hero-copy,.section-head>p,.book-copy p,.center-head p,.step p,.feature-copy p,.feature-row p,.price-card p,.faq-item p{color:#b0b0b0}
 .trust span,.qr-card span,.film-count,.dots{color:#b0b0b0}
 .price-card li{color:#e8e8e8}
+.step a,.price-link,.faq-item strong,.faq-item>b,.ticket-title,.book-meta,.book-small,.book-date,.status,.app-title{color:#e8e8e8}
