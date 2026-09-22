@@ -35,13 +35,14 @@ function Arrow() {
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [useCasesOpen, setUseCasesOpen] = useState(false);
+  const [appMenuOpen, setAppMenuOpen] = useState(false);
 
   return (
     <main>
       <nav className="nav">
         <a href="#" className="logo">flic<span>®</span></a>
         <div className="navlinks">
-          <a href="#start">Get the app <span>⌄</span></a>
+          <button className={`app-menu-trigger ${appMenuOpen ? "active" : ""}`} onClick={() => setAppMenuOpen(!appMenuOpen)}>Get the app <span>{appMenuOpen ? "⌃" : "⌄"}</span></button>
           <a href="#pricing">Pricing</a>
           <button className={`use-cases-trigger ${useCasesOpen ? "active" : ""}`} onClick={() => setUseCasesOpen(!useCasesOpen)}>Use cases <span>⌃</span></button>
           <a href="#faq">Support</a>
@@ -50,6 +51,10 @@ export default function Home() {
         {useCasesOpen && <div className="use-cases-menu">
           <div className="use-case-group"><h3>For personal</h3><div className="use-case-grid">{useCases.personal.map(([icon, label]) => <a href="#start" key={label}><span>{icon}</span>{label}</a>)}</div></div>
           <div className="use-case-group business"><h3>For business</h3><div className="use-case-grid">{useCases.business.map(([icon, label]) => <a href="#start" key={label}><span>{icon}</span>{label}</a>)}</div></div>
+        </div>}
+        {appMenuOpen && <div className="app-menu">
+          <a href="#start"><strong>For hosts</strong><span>Create an event and get your QR code</span></a>
+          <a href="#how"><strong>For guests</strong><span>Join an event with one quick scan</span></a>
         </div>}
       </nav>
 
