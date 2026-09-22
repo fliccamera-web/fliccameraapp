@@ -11,7 +11,7 @@ body{background:var(--cream);color:#e8e8e8}
 .nav-cta,.button.dark{background:#333;color:#e8e8e8}
 .hero-copy,.section-head>p,.book-copy p,.center-head p{color:#8a8a8a}
 .hero h1,.section h2,.feature-band h2,.reviews h2,.start h2,.logo,.navlinks a,.text-link,.step h3,.feature-row h3,.book-copy h2{color:#e8e8e8}
-.eyebrow i,.stars,.review-stars{background:#b0b0b0;color:#b0b0b0}
+.eyebrow i{background:#b0b0b0}.stars,.review-stars{color:#b0b0b0}
 .sun-disc{background:#333}
 .phone{background:#101010;border-color:#101010;box-shadow:20px 25px 30px #000}
 .speaker{background:#000}
