@@ -44,7 +44,7 @@ export default function Home() {
           <a href="#start">Get the app <span>⌄</span></a>
           <a href="#pricing">Pricing</a>
           <button className={`use-cases-trigger ${useCasesOpen ? "active" : ""}`} onClick={() => setUseCasesOpen(!useCasesOpen)}>Use cases <span>⌃</span></button>
-          <a href="#book">Careers</a><a href="#faq">Support</a>
+          <a href="#faq">Support</a>
         </div>
         <a className="nav-cta" href="#start">Create your event <Arrow /></a>
         {useCasesOpen && <div className="use-cases-menu">
