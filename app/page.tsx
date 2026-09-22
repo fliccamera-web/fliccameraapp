@@ -23,34 +23,21 @@ const faqs = [
   ["How many photos per person?", "Each guest gets a pocketful of film: 15 shots by default, with the option to choose 10, 20, or unlimited."],
 ];
 
-const useCases = {
-  personal: [["♥", "Weddings"], ["▣", "Birthdays"], ["♧", "Baby Showers"], ["⌁", "Vacations"]],
-  business: [["▰", "Company Events"], ["▤", "Conferences"], ["♩", "Concerts"], ["♬", "Bars and Clubs"], ["♨", "Ski Resorts"], ["♜", "School Events"], ["♧", "Church"], ["◉", "Sports"]],
-};
-
 function Arrow() {
   return <span className="arrow">↗</span>;
 }
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [useCasesOpen, setUseCasesOpen] = useState(false);
 
   return (
     <main>
       <nav className="nav">
         <a href="#" className="logo">flic<span>®</span></a>
         <div className="navlinks">
-          <a href="#start" className="app-link">Get the app <span>⌄</span></a>
-          <a href="#pricing">Pricing</a>
-          <button className={`use-cases-trigger ${useCasesOpen ? "active" : ""}`} onClick={() => setUseCasesOpen(!useCasesOpen)}>Use cases <span>{useCasesOpen ? "⌃" : "⌃"}</span></button>
-          <a href="#book">Photobook</a><a href="#faq">Support</a>
+          <a href="#how">How it works</a><a href="#book">Photobook</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
         </div>
         <a className="nav-cta" href="#start">Create your event <Arrow /></a>
-        {useCasesOpen && <div className="use-cases-menu">
-          <div className="use-case-group"><h3>For personal</h3><div className="use-case-grid">{useCases.personal.map(([icon, label]) => <a href="#start" key={label}><span>{icon}</span>{label}</a>)}</div></div>
-          <div className="use-case-group business"><h3>For business</h3><div className="use-case-grid">{useCases.business.map(([icon, label]) => <a href="#start" key={label}><span>{icon}</span>{label}</a>)}</div></div>
-        </div>}
       </nav>
 
       <section className="hero" id="top">
