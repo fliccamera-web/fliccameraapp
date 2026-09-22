@@ -32,6 +32,11 @@ body{background:var(--cream);color:#e8e8e8}
 .start p{color:#333}
 .start-sticker{border-color:#101010}
 footer{background:#101010;color:#8a8a8a}
+.stars,.review-stars{background:transparent}
+.start{background:#333;color:#e8e8e8}
+.start p{color:#b0b0b0}
+.faq-item{appearance:none;color:#e8e8e8;background:transparent;border:0;border-bottom:1px solid var(--line);width:100%;text-align:left}
+.review-stars{display:block}
 .hero-copy,.section-head>p,.book-copy p,.center-head p,.step p,.feature-copy p,.feature-row p,.price-card p,.faq-item p{color:#b0b0b0}
 .trust span,.qr-card span,.film-count,.dots{color:#b0b0b0}
 .price-card li{color:#e8e8e8}
