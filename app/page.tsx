@@ -29,9 +29,134 @@ function Arrow() {
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [getAppOpen, setGetAppOpen] = useState(false);
+  const [useCasesOpen, setUseCasesOpen] = useState(false);
+
+  const useCases = {
+    personal: [
+      ["♥", "Weddings"],
+      ["✦", "Birthdays"],
+      ["✧", "Baby Showers"],
+      ["✈", "Vacations"],
+    ],
+    business: [
+      ["▣", "Company Events"],
+      ["▤", "Conferences"],
+      ["♫", "Concerts"],
+      ["✦", "Bars and Clubs"],
+      ["⛷", "Ski Resorts"],
+      ["▣", "School Events"],
+      ["✚", "Church"],
+      ["◉", "Sports"],
+    ],
+  };
 
   return (
     <main>
+      <nav className="top-nav" aria-label="Main navigation">
+        <a href="#top" className="brand" aria-label="Flic home">flic<span>®</span></a>
+
+        <div className="nav-actions">
+          <a href="#pricing" className="nav-link">Pricing</a>
+          <a href="#faq" className="nav-link">Support</a>
+
+          <button
+            type="button"
+            className={`nav-toggle ${useCasesOpen ? "active" : ""}`}
+            onClick={() => {
+              setUseCasesOpen((open) => !open);
+              setGetAppOpen(false);
+            }}
+            aria-expanded={useCasesOpen}
+          >
+            Use <span>{useCasesOpen ? "⌃" : "⌄"}</span>
+          </button>
+
+          <button
+            type="button"
+            className={`nav-toggle ${getAppOpen ? "active" : ""}`}
+            onClick={() => {
+              setGetAppOpen((open) => !open);
+              setUseCasesOpen(false);
+            }}
+            aria-expanded={getAppOpen}
+          >
+            Get the app <span>{getAppOpen ? "⌃" : "⌄"}</span>
+          </button>
+        </div>
+
+        {getAppOpen && (
+          <div className="app-dropdown" role="menu" aria-label="App download options">
+            <div className="app-preview" aria-hidden="true">
+              <div className="device-frame">
+                <div className="device-notch" />
+                <div className="device-ui">
+                  <div className="ui-header">
+                    <span>FOR PERSONAL</span>
+                  </div>
+                  <div className="ui-row">
+                    <span className="device-icon apple"></span>
+                    <span>Download the iOS App</span>
+                  </div>
+                  <div className="ui-row">
+                    <span className="device-icon android">◭</span>
+                    <span>Download the Android App</span>
+                  </div>
+                  <div className="ui-row">
+                    <span className="device-icon clip">▣</span>
+                    <span>Try the App Clip</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="app-sections">
+              <div className="app-section">
+                <h3>For personal</h3>
+                <div className="app-option-row"><span className="option-icon apple"></span><span>Download the iOS App</span></div>
+                <div className="app-option-row"><span className="option-icon android">◭</span><span>Download the Android App</span></div>
+                <div className="app-option-row"><span className="option-icon clip">▣</span><span>Try the App Clip</span></div>
+              </div>
+
+              <div className="app-section business">
+                <h3>For business</h3>
+                <div className="app-option-row"><span className="option-icon web">▢</span><span>Create Using Web App</span></div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {useCasesOpen && (
+          <div className="use-dropdown" role="menu" aria-label="Use cases menu">
+            <div className="use-section">
+              <h3>For personal</h3>
+              <div className="use-grid">
+                {useCases.personal.map(([icon, label]) => (
+                  <a href="#start" key={label} className="use-item">
+                    <span>{icon}</span>
+                    {label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="use-divider" />
+
+            <div className="use-section">
+              <h3>For business</h3>
+              <div className="use-grid business-grid">
+                {useCases.business.map(([icon, label]) => (
+                  <a href="#start" key={label} className="use-item">
+                    <span>{icon}</span>
+                    {label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </nav>
+
       <section className="hero" id="top">
         <div className="hero-left">
           <div className="eyebrow"><i /> The disposable camera for now</div>
