@@ -7,36 +7,28 @@
 /* Noir Film palette: #101010 background, #1C1C1C surfaces, #333333 accents,
    #8A8A8A secondary text, #E8E8E8 primary text, #B0B0B0 silver. */
 body{background:var(--cream);color:#e8e8e8}
-.top-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 5vw 14px;background:rgba(16,16,16,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.top-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:18px 5vw 14px;background:rgba(16,16,16,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);gap:26px}
 .brand{font-size:30px;font-weight:800;letter-spacing:-.12em;line-height:1;color:#f3f3f3}.brand span{font-size:11px;vertical-align:top;margin-left:4px;letter-spacing:0}
-.nav-actions{position:relative;display:flex;align-items:center;gap:18px}
+.nav-actions{position:relative;display:flex;align-items:center;justify-content:center;gap:18px;flex:1;max-width:740px}
 .nav-link,.nav-toggle{border:0;background:transparent;color:#f2f2f2;font:600 15px/1 'Inter',sans-serif;display:inline-flex;align-items:center;gap:8px;cursor:pointer;padding:10px 12px;border-radius:999px;transition:background .2s ease;text-decoration:none}.nav-link:hover,.nav-toggle:hover{background:rgba(255,255,255,.04)}.nav-toggle span{color:#b8b8b8;font-size:18px}
-.app-dropdown,.use-dropdown{position:absolute;top:74px;right:5vw;left:auto;width:min(430px,calc(100vw - 40px));background:#2b2b2d;border:1px solid rgba(255,255,255,.08);border-radius:18px;box-shadow:0 28px 60px rgba(0,0,0,.42);overflow:hidden}
-.app-dropdown{right:5vw}
-.app-preview{padding:18px 18px 0;background:#2b2b2d}
-.device-frame{margin:0 auto;width:100%;max-width:300px;height:380px;border-radius:28px;background:#1d1d1f;border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),0 18px 28px rgba(0,0,0,.28);padding:8px 10px 10px;position:relative}
-.device-notch{width:120px;height:20px;background:#0f0f10;border-radius:0 0 12px 12px;margin:0 auto;position:relative;top:-2px}
-.device-ui{background:#f1f1f1;border-radius:22px;height:calc(100% - 18px);padding:18px 16px;color:#171717}
-.ui-header{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#787878;margin-bottom:18px;font-family:'JetBrains Mono',monospace}
-.ui-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:18px;font-weight:600}
-.ui-row:last-child{border-bottom:0}
-.device-icon,.option-icon{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:8px;font-size:18px;flex-shrink:0}
-.device-icon.apple,.option-icon.apple{background:#111;color:#f2f2f2;border:1px solid rgba(0,0,0,.08)}
-.device-icon.android,.option-icon.android{background:#53b36a;color:#07170d;border-radius:6px;font-size:13px;font-weight:700}
-.device-icon.clip,.option-icon.clip{background:#dfeef6;border:1px dashed rgba(27,73,100,.55);color:#1d5a77;border-radius:8px;font-size:15px}
-.app-sections{padding:10px 0 4px;background:#2b2b2d}
-.app-section{padding:10px 18px 14px;border-top:1px solid rgba(255,255,255,.08)}
-.app-section.business{padding-top:14px}
-.app-section h3,.use-section h3{margin:0 0 12px;color:#b8b8b8;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;font-weight:500}
-.app-option-row{display:flex;align-items:center;gap:12px;padding:10px 0;color:#f3f3f3;font-size:17px;font-weight:600}
-.option-icon.web{background:transparent;border:2px solid rgba(255,255,255,.6);border-radius:7px;width:22px;height:22px}
-.use-dropdown{position:absolute;top:74px;right:10vw;width:min(900px,calc(100vw - 40px));background:#2c2d2f;padding:26px 10px 6px;border-radius:20px;border:1px solid rgba(255,255,255,.08);box-shadow:0 28px 60px rgba(0,0,0,.42)}
-.use-section{padding:0 18px 18px}
-.use-grid{display:grid;grid-template-columns:repeat(2,minmax(180px,1fr));gap:18px 28px;padding-top:8px}
+.app-dropdown,.use-dropdown{position:absolute;top:74px;left:50%;transform:translateX(-50%);background:rgba(26,26,28,.96);border:1px solid rgba(255,255,255,.08);border-radius:16px;box-shadow:0 20px 40px rgba(0,0,0,.26);overflow:hidden;backdrop-filter:blur(10px)}
+.app-dropdown{width:min(440px,calc(100vw - 40px));padding:8px 0}
+.app-section{padding:10px 18px 14px}
+.app-section.business{border-top:1px solid rgba(255,255,255,.08)}
+.app-section h3,.use-section h3{margin:0 0 10px;color:#afafaf;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;font-weight:500}
+.app-option-row{display:flex;align-items:center;gap:12px;padding:10px 0;color:#f2f2f2;font-size:18px;font-weight:600}
+.option-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:8px;flex-shrink:0}
+.option-icon.apple{background:#111;color:#f2f2f2;border:1px solid rgba(255,255,255,.1)}
+.option-icon.android{background:#63c482;color:#0d2415;border-radius:6px;font-size:12px;font-weight:700}
+.option-icon.clip{background:transparent;border:1px dashed rgba(255,255,255,.6);color:#cfe7ff;border-radius:6px;font-size:12px}
+.option-icon.web{background:transparent;border:1px solid rgba(255,255,255,.6);border-radius:6px}
+.use-dropdown{top:74px;width:min(760px,calc(100vw - 40px));padding:18px 18px 10px}
+.use-section{padding:0 0 10px}
+.use-grid{display:grid;grid-template-columns:repeat(2,minmax(180px,1fr));gap:12px 28px;padding-top:8px}
 .business-grid{padding-bottom:8px}
-.use-item{display:flex;align-items:center;gap:14px;font-size:clamp(22px,2.2vw,48px);font-weight:700;letter-spacing:-.06em;color:#f0f0f0;padding:6px 0;text-decoration:none}
-.use-item span{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;color:#d4d4d4;font-size:26px;flex-shrink:0}
-.use-divider{height:1px;background:rgba(255,255,255,.12);margin:8px 18px 0}
+.use-item{display:flex;align-items:center;gap:12px;font-size:clamp(20px,2vw,36px);font-weight:600;letter-spacing:-.05em;color:#f0f0f0;padding:2px 0;text-decoration:none}
+.use-item span{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;color:#d6d6d6;font-size:20px;flex-shrink:0}
+.use-divider{height:1px;background:rgba(255,255,255,.1);margin:8px 0 12px}
 .hero-copy,.section-head>p,.book-copy p,.center-head p{color:#8a8a8a}
 .hero h1,.section h2,.feature-band h2,.reviews h2,.start h2,.logo,.text-link,.step h3,.feature-row h3,.book-copy h2{color:#e8e8e8}
 .eyebrow i{background:#b0b0b0}.stars,.review-stars{color:#b0b0b0}

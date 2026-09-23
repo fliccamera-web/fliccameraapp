@@ -87,41 +87,16 @@ export default function Home() {
 
         {getAppOpen && (
           <div className="app-dropdown" role="menu" aria-label="App download options">
-            <div className="app-preview" aria-hidden="true">
-              <div className="device-frame">
-                <div className="device-notch" />
-                <div className="device-ui">
-                  <div className="ui-header">
-                    <span>FOR PERSONAL</span>
-                  </div>
-                  <div className="ui-row">
-                    <span className="device-icon apple"></span>
-                    <span>Download the iOS App</span>
-                  </div>
-                  <div className="ui-row">
-                    <span className="device-icon android">◭</span>
-                    <span>Download the Android App</span>
-                  </div>
-                  <div className="ui-row">
-                    <span className="device-icon clip">▣</span>
-                    <span>Try the App Clip</span>
-                  </div>
-                </div>
-              </div>
+            <div className="app-section">
+              <h3>For personal</h3>
+              <div className="app-option-row"><span className="option-icon apple"></span><span>Download the iOS App</span></div>
+              <div className="app-option-row"><span className="option-icon android">◭</span><span>Download the Android App</span></div>
+              <div className="app-option-row"><span className="option-icon clip">▣</span><span>Try the App Clip</span></div>
             </div>
 
-            <div className="app-sections">
-              <div className="app-section">
-                <h3>For personal</h3>
-                <div className="app-option-row"><span className="option-icon apple"></span><span>Download the iOS App</span></div>
-                <div className="app-option-row"><span className="option-icon android">◭</span><span>Download the Android App</span></div>
-                <div className="app-option-row"><span className="option-icon clip">▣</span><span>Try the App Clip</span></div>
-              </div>
-
-              <div className="app-section business">
-                <h3>For business</h3>
-                <div className="app-option-row"><span className="option-icon web">▢</span><span>Create Using Web App</span></div>
-              </div>
+            <div className="app-section business">
+              <h3>For business</h3>
+              <div className="app-option-row"><span className="option-icon web">▢</span><span>Create Using Web App</span></div>
             </div>
           </div>
         )}
