@@ -31,7 +31,6 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [getAppOpen, setGetAppOpen] = useState(false);
   const [useCasesOpen, setUseCasesOpen] = useState(false);
-  const [pricingPageOpen, setPricingPageOpen] = useState(false);
 
   const useCases = {
     personal: ["Weddings", "Birthdays", "Baby Showers", "Vacations"],
@@ -44,17 +43,7 @@ export default function Home() {
         <a href="#top" className="brand" aria-label="Flic home">flic<span>®</span></a>
 
         <div className="nav-actions">
-          <a
-            href="#pricing"
-            className="nav-link"
-            onClick={() => {
-              setPricingPageOpen(true);
-              setUseCasesOpen(false);
-              setGetAppOpen(false);
-            }}
-          >
-            Pricing
-          </a>
+          <a href="/pricing" className="nav-link">Pricing</a>
           <a href="#faq" className="nav-link">Support</a>
 
           <button
@@ -176,80 +165,10 @@ export default function Home() {
         <div className="book-copy"><div className="eyebrow"><i /> The afterparty</div><h2>Make it<br /><em>last forever.</em></h2><p>When the confetti settles, turn everyone&apos;s favourite moments into a custom softcover photobook. We&apos;ll do all the work — you just choose your cover.</p><div className="book-meta"><span>6 × 9”</span><span>40–120 pages</span><span>Softcover</span></div><a className="button dark" href="#start">Explore photobooks <Arrow /></a></div>
       </section>
 
-      <section
-        className={`pricing-page ${pricingPageOpen ? "" : "pricing-page-hidden"}`}
-        id="pricing"
-        aria-live="polite"
-      >
-        <div className="pricing-page-inner">
-          <button
-            type="button"
-            className="pricing-close"
-            onClick={() => setPricingPageOpen(false)}
-            aria-label="Close pricing"
-          >
-            ✕
-          </button>
-
-          <h2>PRICING CALCULATOR</h2>
-
-          <div className="pricing-step">
-            <h3>What type of event?</h3>
-
-            <div className="event-selector" aria-label="Event type selector">
-              <div className="event-option selected" aria-current="true">
-                <span className="type-icon">◌</span>
-                <span className="type-copy">
-                  <strong>For Personal</strong>
-                  <small>Events with friends</small>
-                </span>
-                <span className="checkmark">✓</span>
-              </div>
-
-              <div className="event-option">
-                <span className="type-icon">▣</span>
-                <span className="type-copy">
-                  <strong>For Business</strong>
-                  <small>Larger events &amp; custom branding options</small>
-                </span>
-                <span className="checkmark">✓</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="pricing-step">
-            <h3>How many guests?</h3>
-
-            <div className="guest-slider-wrap static-slider" aria-label="Guest count slider">
-              <div className="static-slider-track">
-                <span className="slider-fill" />
-                <span className="slider-thumb" />
-              </div>
-
-              <div className="guest-marks" aria-hidden="true">
-                <span>10</span>
-                <span>25</span>
-                <span>50</span>
-                <span>100</span>
-                <span>175</span>
-                <span>250</span>
-                <span>251+</span>
-              </div>
-            </div>
-
-            <div className="pricing-footer">
-              <span>Up to 10 guests</span>
-              <strong>FREE</strong>
-            </div>
-          </div>
-
-          <button type="button" className="pricing-cta">Create an Event <Arrow /></button>
-        </div>
-      </section>
-
-      <section className="reviews"><div className="center-head"><div className="eyebrow light"><i /> From the guestbook</div><h2>Good times,<br /><em>in their words.</em></h2></div><div className="review-grid">{reviews.map(([quote, name, place], i) => <article className={`review review-${i}`} key={name}><div className="review-stars">★★★★★</div><p>{quote}</p><small>{name} · {place}</small></article>)}</div></section>
 
       <section className="section faq" id="faq"><div className="section-head"><div><div className="eyebrow"><i /> Questions, answered</div><h2>Curious?<br /><em>Good.</em></h2></div><p>Still wondering how the magic works? We&apos;ve got you.</p></div><div className="faq-list">{faqs.map(([question, answer], i) => <button className={`faq-item ${openFaq === i ? "open" : ""}`} key={question} onClick={() => setOpenFaq(openFaq === i ? null : i)}><span>0{i + 1}</span><strong>{question}</strong><b>{openFaq === i ? "−" : "+"}</b>{openFaq === i && <p>{answer}</p>}</button>)}</div></section>
+
+      <section className="reviews"><div className="center-head"><div className="eyebrow light"><i /> From the guestbook</div><h2>Good times,<br /><em>in their words.</em></h2></div><div className="review-grid">{reviews.map(([quote, name, place], i) => <article className={`review review-${i}`} key={name}><div className="review-stars">★★★★★</div><p>{quote}</p><small>{name} · {place}</small></article>)}</div></section>
 
       <section className="start" id="start"><div className="start-inner"><div className="eyebrow light"><i /> Ready when you are</div><h2>Let&apos;s make<br /><em>something worth keeping.</em></h2><p>Start your event in two minutes. No credit card, no app download, no big production.</p><a className="button cream" href="#top">Create your event <Arrow /></a></div><div className="start-sticker">YOUR<br /><em>BEST</em><br />IDEA YET ✳</div></section>
       <footer><a className="logo" href="#top">flic<span>®</span></a><span>Made for the moments between the moments.</span><span>© 2025 Flic</span></footer>
