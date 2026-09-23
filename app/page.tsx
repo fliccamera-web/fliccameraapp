@@ -31,6 +31,7 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [getAppOpen, setGetAppOpen] = useState(false);
   const [useCasesOpen, setUseCasesOpen] = useState(false);
+  const [pricingPageOpen, setPricingPageOpen] = useState(false);
 
   const useCases = {
     personal: ["Weddings", "Birthdays", "Baby Showers", "Vacations"],
@@ -43,7 +44,17 @@ export default function Home() {
         <a href="#top" className="brand" aria-label="Flic home">flic<span>®</span></a>
 
         <div className="nav-actions">
-          <a href="#pricing" className="nav-link">Pricing</a>
+          <a
+            href="#pricing"
+            className="nav-link"
+            onClick={() => {
+              setPricingPageOpen(true);
+              setUseCasesOpen(false);
+              setGetAppOpen(false);
+            }}
+          >
+            Pricing
+          </a>
           <a href="#faq" className="nav-link">Support</a>
 
           <button
@@ -165,7 +176,76 @@ export default function Home() {
         <div className="book-copy"><div className="eyebrow"><i /> The afterparty</div><h2>Make it<br /><em>last forever.</em></h2><p>When the confetti settles, turn everyone&apos;s favourite moments into a custom softcover photobook. We&apos;ll do all the work — you just choose your cover.</p><div className="book-meta"><span>6 × 9”</span><span>40–120 pages</span><span>Softcover</span></div><a className="button dark" href="#start">Explore photobooks <Arrow /></a></div>
       </section>
 
-      <section className="section pricing" id="pricing"><div className="center-head"><div className="eyebrow"><i /> Simple, like film</div><h2>Pick your <em>roll.</em></h2><p>Everything you need to capture the night. Nothing you don&apos;t.</p></div><div className="price-grid">{[["ONE NIGHT", "$39", "One event, one unforgettable night.", ["Up to 50 guests", "15 photos per guest", "Custom event page"]], ["THE WEEKENDER", "$69", "For when one day is never enough.", ["Up to 150 guests", "15 photos per guest", "Custom event page", "Timed reveal"]], ["NO LIMITS", "$129", "For the big, beautiful celebrations.", ["Unlimited guests", "20 photos per guest", "Custom event page", "Photobook discount"]]].map(([title, price, desc, items], i) => <article className={`price-card ${i === 1 ? "popular" : ""}`} key={String(title)}>{i === 1 && <div className="popular-tag">MOST POPULAR</div>}<span className="ticket-title">{title}</span><strong>{price}</strong><small>per event</small><p>{desc}</p><ul>{(items as string[]).map(x => <li key={String(x)}>✓ {x}</li>)}</ul><a href="#start" className="price-link">Get started <Arrow /></a></article>)}</div></section>
+      <section
+        className={`pricing-page ${pricingPageOpen ? "" : "pricing-page-hidden"}`}
+        id="pricing"
+        aria-live="polite"
+      >
+        <div className="pricing-page-inner">
+          <button
+            type="button"
+            className="pricing-close"
+            onClick={() => setPricingPageOpen(false)}
+            aria-label="Close pricing"
+          >
+            ✕
+          </button>
+
+          <h2>PRICING CALCULATOR</h2>
+
+          <div className="pricing-step">
+            <h3>What type of event?</h3>
+
+            <div className="event-selector" aria-label="Event type selector">
+              <div className="event-option selected" aria-current="true">
+                <span className="type-icon">◌</span>
+                <span className="type-copy">
+                  <strong>For Personal</strong>
+                  <small>Events with friends</small>
+                </span>
+                <span className="checkmark">✓</span>
+              </div>
+
+              <div className="event-option">
+                <span className="type-icon">▣</span>
+                <span className="type-copy">
+                  <strong>For Business</strong>
+                  <small>Larger events &amp; custom branding options</small>
+                </span>
+                <span className="checkmark">✓</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="pricing-step">
+            <h3>How many guests?</h3>
+
+            <div className="guest-slider-wrap static-slider" aria-label="Guest count slider">
+              <div className="static-slider-track">
+                <span className="slider-fill" />
+                <span className="slider-thumb" />
+              </div>
+
+              <div className="guest-marks" aria-hidden="true">
+                <span>10</span>
+                <span>25</span>
+                <span>50</span>
+                <span>100</span>
+                <span>175</span>
+                <span>250</span>
+                <span>251+</span>
+              </div>
+            </div>
+
+            <div className="pricing-footer">
+              <span>Up to 10 guests</span>
+              <strong>FREE</strong>
+            </div>
+          </div>
+
+          <button type="button" className="pricing-cta">Create an Event <Arrow /></button>
+        </div>
+      </section>
 
       <section className="reviews"><div className="center-head"><div className="eyebrow light"><i /> From the guestbook</div><h2>Good times,<br /><em>in their words.</em></h2></div><div className="review-grid">{reviews.map(([quote, name, place], i) => <article className={`review review-${i}`} key={name}><div className="review-stars">★★★★★</div><p>{quote}</p><small>{name} · {place}</small></article>)}</div></section>
 
