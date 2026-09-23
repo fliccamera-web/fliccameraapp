@@ -23,41 +23,15 @@ const faqs = [
   ["How many photos per person?", "Each guest gets a pocketful of film: 15 shots by default, with the option to choose 10, 20, or unlimited."],
 ];
 
-const useCases = {
-  personal: [["♥", "Weddings"], ["▣", "Birthdays"], ["♧", "Baby Showers"], ["⌁", "Vacations"]],
-  business: [["▰", "Company Events"], ["▤", "Conferences"], ["♩", "Concerts"], ["♬", "Bars and Clubs"], ["♨", "Ski Resorts"], ["♜", "School Events"], ["♧", "Church"], ["◉", "Sports"]],
-};
-
 function Arrow() {
   return <span className="arrow">↗</span>;
 }
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [useCasesOpen, setUseCasesOpen] = useState(false);
-  const [appMenuOpen, setAppMenuOpen] = useState(false);
 
   return (
     <main>
-      <nav className="nav">
-        <a href="#" className="logo">flic<span>®</span></a>
-        <div className="navlinks">
-          <button className={`app-menu-trigger ${appMenuOpen ? "active" : ""}`} aria-expanded={appMenuOpen} onClick={() => { setAppMenuOpen(!appMenuOpen); setUseCasesOpen(false); }}>Get the app <span>{appMenuOpen ? "⌃" : "⌄"}</span></button>
-          <a href="#pricing">Pricing</a>
-          <button className={`use-cases-trigger ${useCasesOpen ? "active" : ""}`} aria-expanded={useCasesOpen} onClick={() => { setUseCasesOpen(!useCasesOpen); setAppMenuOpen(false); }}>Use cases <span>{useCasesOpen ? "⌃" : "⌄"}</span></button>
-          <a href="#faq">Support</a>
-        </div>
-        <a className="nav-cta" href="#start">Create your event <Arrow /></a>
-        {useCasesOpen && <div className="use-cases-menu">
-          <div className="use-case-group"><h3>For personal</h3><div className="use-case-grid">{useCases.personal.map(([icon, label]) => <a href="#start" key={label}><span>{icon}</span>{label}</a>)}</div></div>
-          <div className="use-case-group business"><h3>For business</h3><div className="use-case-grid">{useCases.business.map(([icon, label]) => <a href="#start" key={label}><span>{icon}</span>{label}</a>)}</div></div>
-        </div>}
-        {appMenuOpen && <div className="app-menu">
-          <a href="#start"><strong>For hosts</strong><span>Create an event and get your QR code</span></a>
-          <a href="#how"><strong>For guests</strong><span>Join an event with one quick scan</span></a>
-        </div>}
-      </nav>
-
       <section className="hero" id="top">
         <div className="hero-left">
           <div className="eyebrow"><i /> The disposable camera for now</div>
