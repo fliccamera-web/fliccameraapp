@@ -33,22 +33,8 @@ export default function Home() {
   const [useCasesOpen, setUseCasesOpen] = useState(false);
 
   const useCases = {
-    personal: [
-      ["♥", "Weddings"],
-      ["✦", "Birthdays"],
-      ["✧", "Baby Showers"],
-      ["✈", "Vacations"],
-    ],
-    business: [
-      ["▣", "Company Events"],
-      ["▤", "Conferences"],
-      ["♫", "Concerts"],
-      ["✦", "Bars and Clubs"],
-      ["⛷", "Ski Resorts"],
-      ["▣", "School Events"],
-      ["✚", "Church"],
-      ["◉", "Sports"],
-    ],
+    personal: ["Weddings", "Birthdays", "Baby Showers", "Vacations"],
+    business: ["Company Events", "Conferences", "Concerts", "Bars and Clubs", "Ski Resorts", "School Events", "Church", "Sports"],
   };
 
   return (
@@ -89,14 +75,14 @@ export default function Home() {
           <div className="app-dropdown" role="menu" aria-label="App download options">
             <div className="app-section">
               <h3>For personal</h3>
-              <div className="app-option-row"><span className="option-icon apple"></span><span>Download the iOS App</span></div>
-              <div className="app-option-row"><span className="option-icon android">◭</span><span>Download the Android App</span></div>
-              <div className="app-option-row"><span className="option-icon clip">▣</span><span>Try the App Clip</span></div>
+              <div className="app-option-row"><span>Download the iOS App</span></div>
+              <div className="app-option-row"><span>Download the Android App</span></div>
+              <div className="app-option-row"><span>Try the App Clip</span></div>
             </div>
 
             <div className="app-section business">
               <h3>For business</h3>
-              <div className="app-option-row"><span className="option-icon web">▢</span><span>Create Using Web App</span></div>
+              <div className="app-option-row"><span>Create Using Web App</span></div>
             </div>
           </div>
         )}
@@ -106,9 +92,8 @@ export default function Home() {
             <div className="use-section">
               <h3>For personal</h3>
               <div className="use-grid">
-                {useCases.personal.map(([icon, label]) => (
+                {useCases.personal.map((label) => (
                   <a href="#start" key={label} className="use-item">
-                    <span>{icon}</span>
                     {label}
                   </a>
                 ))}
@@ -120,9 +105,8 @@ export default function Home() {
             <div className="use-section">
               <h3>For business</h3>
               <div className="use-grid business-grid">
-                {useCases.business.map(([icon, label]) => (
+                {useCases.business.map((label) => (
                   <a href="#start" key={label} className="use-item">
-                    <span>{icon}</span>
                     {label}
                   </a>
                 ))}
